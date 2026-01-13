@@ -74,12 +74,9 @@ main {
   width: 100%;
 }
 
-.product-card__header, .product-card__picture {
+.product-card__header {
   border-radius: 0.5rem 0.5rem 0 0;
-}
-
-.product-card__picture-image {
-  border-radius: inherit;
+  overflow: hidden;
 }
 
 .product-card__content-container {
