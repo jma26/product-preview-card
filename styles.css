@@ -1,0 +1,152 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+html {
+  font-size: 14px;
+}
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/* 9. Improve line wrapping */
+p, span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+:root {
+  --green-500: hsl(158, 36%, 37%);
+  --green-700: hsl(158, 42%, 18%);
+  --black: hsl(212, 21%, 14%);
+  --grey: hsl(228, 12%, 48%);
+  --cream: hsl(30, 38%, 92%);
+  --white: hsl(0, 0%, 100%);
+}
+
+main {
+  align-items: center;
+  background-color: var(--cream);
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  min-height: 100dvh;
+  width: 100%;
+}
+
+.product-card__article {
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  width: 100%;
+}
+
+.product-card__header, .product-card__figure {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.product-card__figure-image {
+  border-radius: inherit;
+}
+
+.product-card__content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.product-card__badge {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--grey);
+  letter-spacing: 3px;
+}
+
+.product-card__headline {
+  color: var(--black);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.product-card__description {
+  color: var(--grey);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.product-card__price-container {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.product-card__price-item.sale-price {
+  color: var(--green-500);
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.product-card__price-item.compare-at-price {
+  color: var(--grey);
+  font-size: 0.857rem;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.product-card__button.add-to-cart {
+  align-items: center;
+  background-color: var(--green-500);
+  border: 1px solid var(--green-500);
+  border-radius: 0.5rem;
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0.857rem 1rem;
+}
+
+.product-card__button.add-to-cart:hover {
+  background-color: var(--green-700);
+  border-color: var(--green-700);
+}
